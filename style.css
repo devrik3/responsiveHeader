@@ -1,0 +1,97 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	text-decoration: none;
+}
+body{background: rgba(0,0,0, .43);}
+* a {
+	color: #FFF;
+}
+header{
+	width: 100%;
+	height: 8vh;
+	background: #333;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+}
+header h2{
+	font-family: 'Share Tech Mono', monospace;
+	font-weight: 500;
+	font-size: 1.4em;
+	color: #FFF;
+}
+header nav ul li{
+	list-style: none;
+	margin: 0 2.5%;
+	font-weight: 200;
+	font-family: 'Montserrat', sans-serif;
+	color: #FFF;
+}
+header nav ul{display: flex;}
+header .responsive{
+	position: absolute;
+	top: 2vh;
+	left: 2vh;
+	display: none;
+}
+header .responsive .hamburguer p{
+	width: 35px;
+  	height: 5px;
+  	background-color: #969696;
+  	margin: 6px 0;
+}
+.btnActive{
+	animation: legRotate 1s ease-in-out both; 
+}
+@keyframes legRotate{
+	0%{transform: rotate(0);}
+	100%{transform: rotate(180deg);}
+}
+@media screen and (max-width: 920px){
+	header{
+		flex-direction: column;
+		justify-content: center;
+	}
+	header .responsive{
+		display: block;
+		cursor: pointer;
+	}
+	header h2{
+		font-family: 'Share Tech Mono', monospace;
+		font-weight: 500;
+		font-size: 1.4em;
+		color: #FFF;
+	}
+	header nav{
+		position: absolute;
+		top: 8vh;
+		width: 100%;
+		height: 100%;
+		background: #333;
+		display: none;
+	}
+	header nav ul{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2%;
+	}
+	header nav ul li{margin: 2%; font-size: 13pt;}
+	header nav ul li::after{
+		content: '';
+		background: #BFBEBF;
+		width: 80%;
+		height: 1.5px;
+		display: block;
+		margin: 1% auto;
+	}
+	.menuAtivo{display: block;}
+	body{overflow: hidden;}
+}
